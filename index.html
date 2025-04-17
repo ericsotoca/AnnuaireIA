@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annuaire IA - Les Incontournables</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police légèrement plus moderne */
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa; /* Fond légèrement différent */
+            color: #333;
+        }
+        a {
+            color: #0056b3; /* Bleu plus standard */
+            text-decoration: none; /* Pas de soulignement par défaut */
+            transition: all 0.2s ease-in-out; /* Transition plus douce */
+        }
+        a:visited {
+            color: #551A8B;
+        }
+        a:hover, a:focus {
+            color: #d9534f; /* Rouge plus doux au survol */
+            text-decoration: underline;
+            background-color: #fdf7f7; /* Léger fond au survol */
+            border-radius: 3px;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .yahoo-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #6f42c1; /* Violet plus prononcé */
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .yahoo-title span {
+            color: #fd7e14; /* Orange comme couleur secondaire */
+            font-style: italic;
+        }
+
+        /* Pas de barre de recherche fonctionnelle */
+        .search-placeholder {
+            color: #aaa;
+            font-style: italic;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .intro {
+             font-size: 1.1em;
+             color: #555;
+             margin-top: 5px;
+        }
+
+        .categories-wrapper {
+            column-count: 2;
+            column-gap: 30px;
+            margin-top: 20px;
+        }
+
+        .category {
+            margin-bottom: 25px;
+            break-inside: avoid-column;
+            padding: 10px;
+            border: 1px solid #e9ecef; /* Bordure légère pour chaque catégorie */
+            border-radius: 5px;
+            background-color: #fff; /* Fond blanc propre */
+        }
+
+        .category h2 {
+            font-size: 1.2em; /* Taille légèrement augmentée */
+            font-weight: 600; /* Un peu plus gras */
+            color: #495057; /* Gris foncé pour les titres */
+            margin: 0 0 12px 0;
+            border-bottom: 2px solid #6f42c1; /* Soulignement violet */
+            padding-bottom: 5px;
+        }
+        .category h2 a {
+             text-decoration: none;
+             color: inherit; /* Hérite la couleur du h2 */
+        }
+        .category h2 a:hover {
+             color: #fd7e14; /* Change de couleur au survol */
+             background-color: transparent; /* Pas de fond sur le titre */
+             text-decoration: none;
+        }
+
+        .subcategory h3 {
+            font-size: 1.05em;
+            font-weight: 600;
+            margin: 10px 0 8px 5px;
+            color: #0056b3; /* Bleu pour les sous-catégories */
+            border-left: 3px solid #fd7e14; /* Marqueur orange */
+            padding-left: 8px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 10px; /* Légère indentation */
+        }
+
+        li {
+            margin-bottom: 10px; /* Plus d'espace entre les liens */
+            padding: 3px 0; /* Léger padding vertical */
+            line-height: 1.4;
+            border-bottom: 1px dotted #eee; /* Séparateur léger entre les liens */
+        }
+        li:last-child {
+            border-bottom: none; /* Pas de bordure pour le dernier élément */
+        }
+
+        li a {
+             display: inline-block; /* Permet un meilleur hover */
+             margin-right: 5px;
+        }
+
+        .tool-description {
+            font-size: 0.9em;
+            color: #6c757d; /* Gris plus doux pour la description */
+            margin-left: 0; /* Alignée à gauche */
+            display: block; /* Sur une nouvelle ligne */
+            margin-top: 2px; /* Petit espace au-dessus */
+            padding-left: 15px; /* Indentation pour la description */
+        }
+        .tool-description::before {
+            content: "↳ "; /* Flèche pour indiquer la description */
+            color: #adb5bd;
+        }
+
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .categories-wrapper {
+                column-count: 1;
+            }
+             .container {
+                margin: 10px;
+                padding: 15px;
+            }
+            .yahoo-title {
+                 font-size: 28px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="yahoo-title">Annuaire IA<span>!</span></div>
+             <p class="intro">Les outils incontournables de l'Intelligence Artificielle</p>
+            
+        </div>
+
+        <div class="categories-wrapper">
+
+            <!-- Catégorie 1: Chatbots & Assistants Conversationnels -->
+            <div class="category">
+                <h2><a href="#">Chatbots & Assistants</a></h2>
+                <div class="subcategory">
+                    <h3>Grands Modèles (LLMs)</h3>
+                    <ul>
+                        <li><a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer" title="ChatGPT">ChatGPT (OpenAI)</a><span class="tool-description">Modèle conversationnel leader, polyvalent pour texte, code, etc.</span></li>
+                        <li><a href="https://claude.ai/" target="_blank" rel="noopener noreferrer" title="Claude">Claude (Anthropic)</a><span class="tool-description">Modèle axé sur la sécurité, l'éthique et les longues conversations.</span></li>
+                        <li><a href="https://gemini.google.com/app" target="_blank" rel="noopener noreferrer" title="Gemini">Google Gemini</a><span class="tool-description">Suite de modèles IA de Google, intégrée à leurs services.</span></li>
+                        <li><a href="https://mistral.ai/" target="_blank" rel="noopener noreferrer" title="Mistral AI">Mistral AI</a><span class="tool-description">Modèles ouverts et performants, forte présence européenne.</span></li>
+                        <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" title="Perplexity">Perplexity AI</a><span class="tool-description">Moteur de réponse conversationnel citant ses sources.</span></li>
+                        <li><a href="https://huggingface.co/chat/" target="_blank" rel="noopener noreferrer" title="Hugging Chat">HuggingChat (Hugging Face)</a><span class="tool-description">Interface de chat open-source basée sur divers modèles.</span></li>
+                         <li><a href="https://grok.com/" target="_blank" rel="noopener noreferrer" title="Grok">Grok (xAI)</a><span class="tool-description">IA conversationnelle intégrée à X (Twitter), ton décalé.</span> </li>
+                         <li><a href="https://chat.qwenlm.ai/" target="_blank" rel="noopener noreferrer" title="Qwen">Qwen (Alibaba Cloud)</a><span class="tool-description">Modèle puissant d'Alibaba, multilingue et multimodal.</span> </li>
+                         <li><a href="https://chat.deepseek.com/" target="_blank" rel="noopener noreferrer" title="DeepSeek - Into the Unknown">DeepSeek</a><span class="tool-description">Modèle performant, notamment pour le code et le raisonnement.</span> </li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Plateformes & Spécialisés</h3>
+                     <ul>
+                        <li><a href="https://character.ai/" target="_blank" rel="noopener noreferrer" title="Character.AI - bring characters to life!">Character.ai</a><span class="tool-description">Créez et discutez avec des personnages IA personnalisés.</span></li>
+                        <li><a href="https://poe.com/" target="_blank" rel="noopener noreferrer" title="Poe - Fast, Helpful AI Chat">Poe (Quora)</a><span class="tool-description">Accédez à plusieurs chatbots (GPT, Claude, etc.) via une interface unique.</span></li>
+                         <li><a href="https://pi.ai/" target="_blank" rel="noopener noreferrer" title="Pi, your personal AI">Pi, your personal AI</a><span class="tool-description">IA conversationnelle axée sur le soutien et l'empathie.</span></li>
+                          <li><a href="https://lmarena.ai/" target="_blank" rel="noopener noreferrer" title="Chatbot Arena (formerly LMSYS): Free AI Chat to Compare & Test Best AI Chatbots">Chatbot Arena</a><span class="tool-description">Comparez anonymement les performances de différents LLMs.</span> </li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>API & Développement</h3>
+                     <ul>
+                         <li><a href="https://beta.openai.com/docs/quickstart" target="_blank" rel="noopener noreferrer" title="Quickstart tutorial - OpenAI API">OpenAI API Docs</a><span class="tool-description">Documentation pour intégrer GPT et DALL-E dans vos applications.</span> </li>
+                         <li><a href="https://console.groq.com/playground" target="_blank" rel="noopener noreferrer" title="Playground - GroqCloud">Groq Playground</a><span class="tool-description">Testez des modèles open source avec une inférence ultra-rapide.</span> </li>
+                         <li><a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer" title="Google AI Studio - Quickly prototype and build generative AI applications">Google AI Studio</a><span class="tool-description">Plateforme Google pour prototyper avec les modèles Gemini.</span> </li>
+                         <li><a href="https://openrouter.ai/" target="_blank" rel="noopener noreferrer" title="OpenRouter">OpenRouter</a><span class="tool-description">Accédez à une multitude de modèles IA via une seule API.</span> </li>
+                         <li><a href="https://console.mistral.ai/" target="_blank" rel="noopener noreferrer" title="La Plateforme - Mistral AI">Mistral AI Platform</a><span class="tool-description">Accès API aux modèles Mistral et gestion des déploiements.</span> </li>
+                    </ul>
+                 </div>
+            </div>
+
+            <!-- Catégorie 2: Génération d'Images -->
+            <div class="category">
+                <h2><a href="#">Génération d'Images</a></h2>
+                 <div class="subcategory">
+                    <h3>Texte-vers-Image (Leaders)</h3>
+                    <ul>
+                        <li><a href="https://www.midjourney.com/" target="_blank" rel="noopener noreferrer" title="Midjourney">Midjourney</a><span class="tool-description">Référence pour la génération d'images artistiques via Discord.</span></li>
+                        <li><a href="https://openai.com/dall-e-3/" target="_blank" rel="noopener noreferrer" title="DALL·E 3">DALL-E 3 (OpenAI)</a><span class="tool-description">Générateur puissant, bien intégré avec ChatGPT.</span></li>
+                        <li><a href="https://stablediffusionweb.com/" target="_blank" rel="noopener noreferrer" title="Stable Diffusion Online">Stable Diffusion Online</a><span class="tool-description">Interface web populaire pour le modèle open source Stable Diffusion.</span></li>
+                        <li><a href="https://leonardo.ai/" target="_blank" rel="noopener noreferrer" title="Leonardo.Ai">Leonardo.Ai</a><span class="tool-description">Plateforme polyvalente avec de nombreux modèles et outils créatifs.</span></li>
+                        <li><a href="https://ideogram.ai/" target="_blank" rel="noopener noreferrer" title="Ideogram">Ideogram AI</a><span class="tool-description">Performant pour générer des images contenant du texte lisible.</span></li>
+                         <li><a href="https://imagine.meta.com/" target="_blank" rel="noopener noreferrer" title="Imagine with Meta AI">Meta Imagine</a><span class="tool-description">Générateur d'images gratuit proposé par Meta (Facebook).</span></li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Édition & Amélioration</h3>
+                    <ul>
+                        <li><a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener noreferrer" title="Adobe Firefly">Adobe Firefly</a><span class="tool-description">Suite d'outils IA d'Adobe (Generative Fill, Text-to-Image...).</span></li>
+                        <li><a href="https://clipdrop.co/" target="_blank" rel="noopener noreferrer" title="Clipdrop - Stability AI">Clipdrop (Stability AI)</a><span class="tool-description">Ensemble d'utilitaires IA (suppression fond, uncrop, upscale...).</span></li>
+                         <li><a href="https://magnific.ai/" target="_blank" rel="noopener noreferrer" title="Magnific AI">Magnific AI</a><span class="tool-description">Upscaling et amélioration d'images avec ajout de détails.</span></li>
+                         <li><a href="https://letsenhance.io/" target="_blank" rel="noopener noreferrer" title="Let's Enhance: AI image enhancer & upscaler">Let's Enhance</a><span class="tool-description">Amélioration et augmentation de la résolution d'images par IA.</span></li>
+                         <li><a href="https://cleanup.pictures/" target="_blank" rel="noopener noreferrer" title="Cleanup.pictures - Remove objects, people, text and defects from any picture - Free">Cleanup.pictures</a><span class="tool-description">Supprime facilement des objets, défauts ou textes d'une image.</span> </li>
+                         <li><a href="https://palette.fm/" target="_blank" rel="noopener noreferrer" title="Palette - Colorize Pictures">Palette.fm</a><span class="tool-description">Colorisation automatique et personnalisable de photos N&B.</span> </li>
+                         <li><a href="https://www.erase.bg/fr/" target="_blank" rel="noopener noreferrer" title="Supprimer l'arrière-plan d'une image gratuitement – Erase.bg">Erase.bg</a><span class="tool-description">Suppression simple et rapide de l'arrière-plan d'images.</span> </li>
+
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Autres Plateformes & Outils</h3>
+                     <ul>
+                        <li><a href="https://playground.com/" target="_blank" rel="noopener noreferrer" title="Playground - AI Image Creator & Editor">Playground</a><span class="tool-description">Création et édition d'images IA avec une interface web riche.</span></li>
+                         <li><a href="https://www.bing.com/images/create" target="_blank" rel="noopener noreferrer" title="Générateur d’images Microsoft Designer">Bing Image Creator</a><span class="tool-description">Générateur d'images gratuit de Microsoft (basé sur DALL-E).</span></li>
+                         <li><a href="https://huggingface.co/spaces/stabilityai/stable-diffusion" target="_blank" rel="noopener noreferrer" title="Stable Diffusion 2.1 Demo - a Hugging Face Space by stabilityai">Stable Diffusion Demo (HF)</a><span class="tool-description">Démonstration en ligne de Stable Diffusion sur Hugging Face.</span></li>
+                         <li><a href="https://tensor.art/" target="_blank" rel="noopener noreferrer" title="FREE online image generator and model hosting site! | Tensor.Art">Tensor Art</a><span class="tool-description">Plateforme d'hébergement et de génération d'images avec de nombreux modèles.</span> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Catégorie 3: Génération Vidéo -->
+            <div class="category">
+                 <h2><a href="#">Génération Vidéo</a></h2>
+                 <div class="subcategory">
+                    <h3>Texte/Image-vers-Vidéo</h3>
+                    <ul>
+                        <li><a href="https://runwayml.com/" target="_blank" rel="noopener noreferrer" title="Runway | Advance Creativity">Runway (Gen-2)</a><span class="tool-description">Pionnier de la génération vidéo IA, avec suite d'édition complète.</span></li>
+                        <li><a href="https://pika.art/" target="_blank" rel="noopener noreferrer" title="Pika">Pika</a><span class="tool-description">Plateforme populaire pour la création de courtes vidéos IA.</span></li>
+                        <li><a href="https://lumaai.com/dream-machine" target="_blank" rel="noopener noreferrer" title="Luma Dream Machine">Luma Dream Machine</a><span class="tool-description">Génération de vidéos réalistes et fluides à partir de prompts.</span></li>
+                        <li><a href="https://openai.com/sora" target="_blank" rel="noopener noreferrer" title="Sora">OpenAI Sora</a><span class="tool-description">Modèle très attendu (non public) promettant une haute qualité.</span></li>
+                        <li><a href="https://klingai.com/" target="_blank" rel="noopener noreferrer" title="KLING AI: Next-Generation AI Creative Studio">Kling AI</a><span class="tool-description">Modèle chinois prometteur pour la génération vidéo longue durée.</span> </li>
+                        <li><a href="https://hailuoai.video/" target="_blank" rel="noopener noreferrer" title="Hailuo AI: Transform Idea to Visual with AI">Hailuo AI</a><span class="tool-description">Autre générateur vidéo IA, souvent comparé à Kling.</span> </li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Avatars & Présentations</h3>
+                    <ul>
+                        <li><a href="https://www.heygen.com/" target="_blank" rel="noopener noreferrer" title="Video Translation, Localization & Dubbing - HeyGen">HeyGen</a><span class="tool-description">Créez des vidéos professionnelles avec des avatars IA parlants.</span></li>
+                        <li><a href="https://www.synthesia.io/" target="_blank" rel="noopener noreferrer" title="Synthesia | #1 AI Video Generation Platform">Synthesia</a><span class="tool-description">Plateforme leader pour la création de vidéos de formation/marketing avec avatars.</span></li>
+                        <li><a href="https://d-id.com/" target="_blank" rel="noopener noreferrer" title="D-ID | The #1 choice for AI video generation">D-ID</a><span class="tool-description">Animation de visages à partir de photos et création de vidéos IA.</span></li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Édition Assistée IA</h3>
+                    <ul>
+                        <li><a href="https://www.capcut.com/" target="_blank" rel="noopener noreferrer" title="CapCut - All-in-one video editor">CapCut (Desktop/Mobile)</a><span class="tool-description">Éditeur vidéo populaire intégrant de nombreuses fonctions IA.</span></li>
+                        <li><a href="https://pictory.ai/" target="_blank" rel="noopener noreferrer" title="Pictory AI">Pictory</a><span class="tool-description">Transforme automatiquement scripts et articles en vidéos engageantes.</span></li>
+                        <li><a href="https://invideo.io/ai/" target="_blank" rel="noopener noreferrer" title="Invideo AI">InVideo AI</a><span class="tool-description">Génère des vidéos complètes (script, voix, visuels) à partir d'un prompt.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+             <!-- Catégorie 4: Audio, Voix & Musique -->
+            <div class="category">
+                <h2><a href="#">Audio, Voix & Musique</a></h2>
+                 <div class="subcategory">
+                    <h3>Synthèse & Clonage Vocal</h3>
+                    <ul>
+                        <li><a href="https://elevenlabs.io/" target="_blank" rel="noopener noreferrer" title="ElevenLabs">ElevenLabs</a><span class="tool-description">Leader en synthèse vocale ultra-réaliste et clonage de voix.</span></li>
+                        <li><a href="https://murf.ai/" target="_blank" rel="noopener noreferrer" title="Murf AI | AI Voice Generator">Murf.ai</a><span class="tool-description">Générateur de voix IA pour vidéos, podcasts et présentations.</span></li>
+                        <li><a href="https://play.ht/" target="_blank" rel="noopener noreferrer" title="AI Voice Generator & Realistic Text to Speech Online | PlayHT">Play.ht</a><span class="tool-description">Large sélection de voix IA et capacités de clonage.</span></li>
+                         <li><a href="https://github.com/CorentinJ/Real-Time-Voice-Cloning" target="_blank" rel="noopener noreferrer" title="GitHub - CorentinJ/Real-Time-Voice-Cloning: Clone a voice in 5 seconds...">Real-Time Voice Cloning (GitHub)</a><span class="tool-description">Projet open-source populaire pour le clonage vocal rapide.</span> </li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Musique Générée</h3>
+                    <ul>
+                        <li><a href="https://suno.com/" target="_blank" rel="noopener noreferrer" title="Suno">Suno AI</a><span class="tool-description">Génère des chansons complètes (musique+voix) à partir de texte.</span></li>
+                        <li><a href="https://www.udio.com/" target="_blank" rel="noopener noreferrer" title="Udio">Udio</a><span class="tool-description">Concurrent direct de Suno pour la création de chansons par IA.</span></li>
+                        <li><a href="https://soundraw.io/" target="_blank" rel="noopener noreferrer" title="AI Music Generator for Creators | Soundraw">Soundraw</a><span class="tool-description">Génération de musique instrumentale libre de droits et personnalisable.</span></li>
+                        <li><a href="https://mubert.com/" target="_blank" rel="noopener noreferrer" title="Mubert — The new royalty-free music ecosystem for content creators, brands and developers">Mubert</a><span class="tool-description">Plateforme de musique générée par IA pour vidéos et streams.</span></li>
+                        <li><a href="https://stableaudio.com/" target="_blank" rel="noopener noreferrer" title="Stable Audio - Generative AI for music & sound fx">Stable Audio</a><span class="tool-description">Génération audio haute fidélité par Stability AI.</span> </li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Traitement & Analyse Audio</h3>
+                    <ul>
+                         <li><a href="https://podcast.adobe.com/enhance" target="_blank" rel="noopener noreferrer" title="Adobe Podcast | AI audio recorder and editor">Adobe Podcast Enhance</a><span class="tool-description">Améliore la qualité de la voix (bruit, écho) gratuitement.</span></li>
+                         <li><a href="https://lalal.ai/" target="_blank" rel="noopener noreferrer" title="LALAL.AI: Stem Splitter & Vocal Remover">LALAL.AI</a><span class="tool-description">Séparation précise des pistes (voix, instruments) d'un fichier audio.</span></li>
+                         <li><a href="https://vocalremover.org/" target="_blank" rel="noopener noreferrer" title="Vocal Remover and Isolation [AI]">VocalRemover.org</a><span class="tool-description">Outil en ligne gratuit pour séparer voix et musique.</span> </li>
+                         <li><a href="https://otter.ai/" target="_blank" rel="noopener noreferrer" title="Otter.ai | Voice Meeting Notes & Real-time Transcription">Otter.ai</a><span class="tool-description">Transcription et résumé de réunions et interviews.</span></li>
+                         <li><a href="https://fireflies.ai/" target="_blank" rel="noopener noreferrer" title="Fireflies.ai | AI Notetaker & Conversation Intelligence">Fireflies.ai</a><span class="tool-description">Assistant IA pour l'enregistrement et la transcription de réunions.</span></li>
+                         <li><a href="https://www.descript.com/" target="_blank" rel="noopener noreferrer" title="Descript | All-in-one video & podcast editing, easy as a doc.">Descript</a><span class="tool-description">Éditeur audio/vidéo basé sur la transcription, avec fonctions IA.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Catégorie 5: Code & Développement -->
+            <div class="category">
+                <h2><a href="#">Code & Développement</a></h2>
+                <div class="subcategory">
+                    <h3>Assistants de Code (IDE)</h3>
+                    <ul>
+                        <li><a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer" title="GitHub Copilot · Your AI pair programmer">GitHub Copilot</a><span class="tool-description">L'assistant de code IA le plus populaire, intégré aux IDEs.</span></li>
+                        <li><a href="https://www.tabnine.com/" target="_blank" rel="noopener noreferrer" title="AI assistant for software developers | Tabnine">Tabnine</a><span class="tool-description">Autocomplétion de code IA, supporte de nombreux langages.</span></li>
+                        <li><a href="https://aws.amazon.com/codewhisperer/" target="_blank" rel="noopener noreferrer" title="Amazon CodeWhisperer - AWS">Amazon CodeWhisperer</a><span class="tool-description">Assistant de codage IA d'AWS, gratuit pour usage individuel.</span></li>
+                         <li><a href="https://cursor.sh/" target="_blank" rel="noopener noreferrer" title="Cursor - The AI-first Code Editor">Cursor</a><span class="tool-description">Éditeur de code basé sur VSCode, fortement orienté IA.</span> </li>
+                         <li><a href="https://replit.com/site/ghostwriter" target="_blank" rel="noopener noreferrer" title="Replit Ghostwriter - AI features to help you code">Replit Ghostwriter</a><span class="tool-description">Suite d'outils IA intégrée à l'IDE en ligne Replit.</span> </li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Génération & Outils Spécifiques</h3>
+                     <ul>
+                        <li><a href="https://www.phind.com/" target="_blank" rel="noopener noreferrer" title="Phind - The AI search engine for developers">Phind</a><span class="tool-description">Moteur de recherche IA optimisé pour les questions de développeurs.</span></li>
+                        <li><a href="https://v0.dev/" target="_blank" rel="noopener noreferrer" title="v0">v0.dev (Vercel)</a><span class="tool-description">Génère des interfaces React à partir de prompts textuels.</span></li>
+                        <li><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="noopener noreferrer" title="GitHub - Significant-Gravitas/AutoGPT: AutoGPT is the vision...">AutoGPT (GitHub)</a><span class="tool-description">Projet open-source d'agent IA autonome (expérimental).</span> </li>
+                         <li><a href="https://lovable.dev/" target="_blank" rel="noopener noreferrer" title="Lovable - Magical developer tools.">Lovable.dev</a><span class="tool-description">Outils IA pour générer documentation et tests.</span> </li>
+                         <li><a href="https://console.firebase.google.com/project/_/firestore" target="_blank" rel="noopener noreferrer" title="Firebase console">Firebase (Studio AI)</a><span class="tool-description">Intégration IA dans Firebase pour aider au développement (Firestore, etc).</span> </li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Plateformes IA Généralistes</h3>
+                    <ul>
+                        <li><a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer" title="Hugging Face – The AI community building the future.">Hugging Face</a><span class="tool-description">Plateforme communautaire majeure pour modèles, datasets et démos IA.</span> </li>
+                         <li><a href="https://vercel.com/ai" target="_blank" rel="noopener noreferrer" title="Vercel AI SDK">Vercel AI SDK</a><span class="tool-description">Framework pour construire des applications IA avec des outils front-end modernes.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Catégorie 6: Rédaction & Contenu -->
+            <div class="category">
+                <h2><a href="#">Rédaction & Contenu</a></h2>
+                 <div class="subcategory">
+                    <h3>Assistants d'Écriture</h3>
+                    <ul>
+                        <li><a href="https://jasper.ai/" target="_blank" rel="noopener noreferrer" title="Jasper - AI Copilot for Marketing Teams">Jasper</a><span class="tool-description">Plateforme IA axée sur le contenu marketing et commercial.</span></li>
+                        <li><a href="https://copy.ai/" target="_blank" rel="noopener noreferrer" title="Copy.ai: Write better marketing copy and content with AI">Copy.ai</a><span class="tool-description">Génère divers types de textes (pubs, emails, articles...).</span></li>
+                         <li><a href="https://writesonic.com/" target="_blank" rel="noopener noreferrer" title="Writesonic - Best AI Writer, Copywriting & Paraphrasing Tool">Writesonic</a><span class="tool-description">Outil de rédaction IA avec focus sur le SEO et le contenu long format.</span></li>
+                         <li><a href="https://rytr.me/" target="_blank" rel="noopener noreferrer" title="Rytr - Best AI Writer, Content Generator & Writing Assistant">Rytr</a><span class="tool-description">Assistant d'écriture IA polyvalent et abordable.</span></li>
+                         <li><a href="https://manus.im/app" target="_blank" rel="noopener noreferrer" title="Manus">Manus</a><span class="tool-description">Outil d'aide à la rédaction et à la structuration de textes longs.</span> </li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Correction & Reformulation</h3>
+                     <ul>
+                        <li><a href="https://grammarly.com/" target="_blank" rel="noopener noreferrer" title="Grammarly: AI Writing Assistance">Grammarly</a><span class="tool-description">Correction grammaticale, orthographique et suggestions de style.</span></li>
+                        <li><a href="https://quillbot.com/" target="_blank" rel="noopener noreferrer" title="QuillBot | AI Writing and Grammar Checker Tool">QuillBot</a><span class="tool-description">Excellent outil de reformulation, résumé et vérification grammaticale.</span></li>
+                        <li><a href="https://wordtune.com/" target="_blank" rel="noopener noreferrer" title="Wordtune | Your personal AI writing assistant & editor">Wordtune</a><span class="tool-description">Reformule vos phrases pour améliorer clarté, ton et fluidité.</span></li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Traduction</h3>
+                    <ul>
+                        <li><a href="https://www.deepl.com/translator" target="_blank" rel="noopener noreferrer" title="DeepL Translate: The world's most accurate translator">DeepL</a><span class="tool-description">Traducteur neuronal réputé pour sa grande qualité et sa fluidité.</span></li>
+                        <li><a href="https://translate.google.com/" target="_blank" rel="noopener noreferrer" title="Google Traduction">Google Translate</a><span class="tool-description">Service de traduction le plus utilisé, très large couverture linguistique.</span></li>
+                    </ul>
+                </div>
+            </div>
+
+             <!-- Catégorie 7: Recherche & Analyse -->
+             <div class="category">
+                 <h2><a href="#">Recherche & Analyse</a></h2>
+                 <div class="subcategory">
+                    <h3>Moteurs de Recherche IA</h3>
+                    <ul>
+                        <li><a href="https://www.perplexity.ai/" target="_blank" rel="noopener noreferrer" title="Perplexity">Perplexity AI</a><span class="tool-description">Moteur de réponse conversationnel citant ses sources web.</span></li>
+                        <li><a href="https://you.com/" target="_blank" rel="noopener noreferrer" title="You.com | The AI Search Engine You Control">You.com</a><span class="tool-description">Moteur de recherche personnalisable intégrant des apps IA.</span></li>
+                         <li><a href="https://kagi.com/" target="_blank" rel="noopener noreferrer" title="Kagi Search">Kagi</a><span class="tool-description">Moteur de recherche premium sans pub, avec outils IA (résumé...).</span></li>
+                         <li><a href="https://www.genspark.ai/" target="_blank" rel="noopener noreferrer" title="Genspark - Reinventing Search. Welcome to the Agentic Engine.">Genspark</a><span class="tool-description">Moteur de recherche basé sur des agents IA pour des réponses synthétisées.</span> </li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Recherche Académique & Scientifique</h3>
+                     <ul>
+                        <li><a href="https://elicit.com/" target="_blank" rel="noopener noreferrer" title="Elicit: The AI Research Assistant">Elicit</a><span class="tool-description">Assistant IA pour explorer et synthétiser la littérature scientifique.</span></li>
+                        <li><a href="https://scite.ai/" target="_blank" rel="noopener noreferrer" title="scite: see how research has been cited">Scite.ai</a><span class="tool-description">Évalue la fiabilité des articles en analysant comment ils sont cités.</span></li>
+                        <li><a href="https://consensus.app/" target="_blank" rel="noopener noreferrer" title="Consensus - AI Search Engine for Research">Consensus</a><span class="tool-description">Trouve des réponses basées sur des preuves issues de la recherche scientifique.</span></li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Analyse de Données & BI</h3>
+                     <ul>
+                         <li><a href="https://www.tableau.com/products/einstein-discovery" target="_blank" rel="noopener noreferrer" title="Tableau AI and Einstein | Tableau">Tableau AI (Einstein)</a><span class="tool-description">Fonctionnalités IA intégrées à Tableau pour insights et prédictions.</span></li>
+                         <li><a href="https://powerbi.microsoft.com/features/#ai-features" target="_blank" rel="noopener noreferrer" title="Features | Microsoft Power BI">Power BI AI Features</a><span class="tool-description">Capacités IA dans Microsoft Power BI (Q&A, insights...).</span></li>
+                         <li><a href="https://monkeylearn.com/" target="_blank" rel="noopener noreferrer" title="MonkeyLearn | Text Analysis with Machine Learning">MonkeyLearn</a><span class="tool-description">Plateforme No-Code pour l'analyse de texte (sentiments, mots-clés...).</span> </li>
+                     </ul>
+                 </div>
+            </div>
+
+            <!-- Catégorie 8: Productivité & Automatisation -->
+            <div class="category">
+                <h2><a href="#">Productivité & Automatisation</a></h2>
+                 <div class="subcategory">
+                    <h3>Automatisation & Intégration</h3>
+                    <ul>
+                         <li><a href="https://zapier.com/ai" target="_blank" rel="noopener noreferrer" title="AI Tools by Zapier | Zapier">Zapier AI</a><span class="tool-description">Intègre des actions IA (texte, décision...) dans vos workflows Zapier.</span></li>
+                        <li><a href="https://make.com/en" target="_blank" rel="noopener noreferrer" title="Make | Automation Software | Connect Apps & Design Workflows | Make">Make (Intégrations IA)</a><span class="tool-description">Plateforme d'automatisation visuelle avec modules IA intégrables.</span></li>
+                        <li><a href="https://bardeen.ai/" target="_blank" rel="noopener noreferrer" title="Bardeen | AI Automation for Knowledge Workers">Bardeen</a><span class="tool-description">Automatise les tâches répétitives du navigateur via des commandes IA.</span></li>
+                    </ul>
+                </div>
+                <div class="subcategory">
+                    <h3>Agents Autonomes & Tasking</h3>
+                     <ul>
+                        <li><a href="https://app.relevanceai.com/" target="_blank" rel="noopener noreferrer" title="Relevance AI">Relevance AI</a><span class="tool-description">Créez et déployez des agents IA personnalisés pour diverses tâches.</span> </li>
+                        <li><a href="https://websim.ai/" target="_blank" rel="noopener noreferrer" title="websim.ai">WebSim AI</a><span class="tool-description">Plateforme d'agents IA pour simuler et automatiser des interactions web.</span> </li>
+                        <li><a href="https://vectorshift.ai/" target="_blank" rel="noopener noreferrer" title="VectorShift">VectorShift</a><span class="tool-description">Plateforme low-code pour construire des workflows et agents IA.</span> </li>
+                     </ul>
+                 </div>
+                 <div class="subcategory">
+                    <h3>Organisation & Notes</h3>
+                    <ul>
+                        <li><a href="https://mem.ai/" target="_blank" rel="noopener noreferrer" title="Mem | The Self-Organizing Workspace">Mem</a><span class="tool-description">Espace de travail qui organise automatiquement vos notes par IA.</span></li>
+                        <li><a href="https://obsidian.md/" target="_blank" rel="noopener noreferrer" title="Obsidian">Obsidian</a><span class="tool-description">Base de connaissances personnelle, extensible avec des plugins IA.</span></li>
+                        <li><a href="https://notebooklm.google.com/" target="_blank" rel="noopener noreferrer" title="Google NotebookLM | Note Taking & Research Assistant Powered by AI">NotebookLM</a><span class="tool-description">Assistant de recherche et de prise de notes basé sur vos documents.</span> </li>
+                         <li><a href="https://www.napkin.ai/" target="_blank" rel="noopener noreferrer" title="Napkin - a home for your thoughts">Napkin AI</a><span class="tool-description">Outil de prise de notes visuel qui révèle les connexions entre idées.</span> </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Catégorie 9: Design & Présentation -->
+             <div class="category">
+                 <h2><a href="#">Design & Présentation</a></h2>
+                  <div class="subcategory">
+                    <h3>Présentations Assistées par IA</h3>
+                    <ul>
+                        <li><a href="https://gamma.app/" target="_blank" rel="noopener noreferrer" title="Gamma">Gamma</a><span class="tool-description">Crée rapidement présentations, documents et pages web via IA.</span></li>
+                        <li><a href="https://tome.app/" target="_blank" rel="noopener noreferrer" title="Tome: AI presentations & documents">Tome</a><span class="tool-description">Outil de storytelling IA pour générer des présentations visuelles.</span></li>
+                        <li><a href="https://www.beautiful.ai/" target="_blank" rel="noopener noreferrer" title="Beautiful.ai Presentation Software | Presentation Maker">Beautiful.ai</a><span class="tool-description">Créateur de présentations avec design assisté pour un rendu pro rapide.</span></li>
+                         <li><a href="https://www.tango.us/" target="_blank" rel="noopener noreferrer" title="Tango: Create how-to guides, with screenshots, in seconds.">Tango</a><span class="tool-description">Génère automatiquement des guides et tutoriels avec captures d'écran.</span> </li>
+                    </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>UI/UX Design IA</h3>
+                     <ul>
+                        <li><a href="https://galileo.ai/" target="_blank" rel="noopener noreferrer" title="Galileo AI | UI generation from text">Galileo AI</a><span class="tool-description">Génère des designs d'interface utilisateur modifiables à partir de texte.</span></li>
+                        <li><a href="https://visily.ai/" target="_blank" rel="noopener noreferrer" title="Visily | AI Wireframe & UI Design Tool">Visily</a><span class="tool-description">Outil IA pour créer wireframes et prototypes d'interface rapidement.</span></li>
+                        <li><a href="https://uizard.io/" target="_blank" rel="noopener noreferrer" title="Uizard | AI Powered UI Design & Wireframing Tool">Uizard</a><span class="tool-description">Transforme croquis et prompts en maquettes d'interface éditables.</span></li>
+                    </ul>
+                 </div>
+             </div>
+
+            <!-- Catégorie 10: Divers & Communauté -->
+            <div class="category">
+                 <h2><a href="#">Divers & Communauté</a></h2>
+                 <div class="subcategory">
+                    <h3>Éducation & Apprentissage</h3>
+                     <ul>
+                        <li><a href="https://www.khanmigo.ai/" target="_blank" rel="noopener noreferrer" title="Khanmigo™ | AI for Education | Khan Academy">Khanmigo (Khan Academy)</a><span class="tool-description">Tuteur IA pour élèves et outil d'aide pour enseignants.</span></li>
+                        <li><a href="https://tutorai.me/" target="_blank" rel="noopener noreferrer" title="TutorAI - Learn anything">TutorAI</a><span class="tool-description">Permet d'apprendre sur n'importe quel sujet avec un tuteur IA.</span></li>
+                     </ul>
+                </div>
+                 <div class="subcategory">
+                    <h3>Plateformes Communautaires</h3>
+                     <ul>
+                         <li><a href="https://huggingface.co/spaces" target="_blank" rel="noopener noreferrer" title="Spaces - Hugging Face">Hugging Face Spaces</a><span class="tool-description">Hébergement et partage de démos d'applications IA par la communauté.</span> </li>
+                         <li><a href="https://github.com/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer" title="Artificial intelligence · GitHub Topics">GitHub (Topic AI)</a><span class="tool-description">Explorez les projets open-source liés à l'IA sur GitHub.</span></li>
+                         <li><a href="https://www.reddit.com/r/artificial/" target="_blank" rel="noopener noreferrer" title="r/artificial">Reddit r/artificial</a><span class="tool-description">Communauté Reddit pour discuter des dernières avancées en IA.</span></li>
+                     </ul>
+                 </div>
+                <div class="subcategory">
+                    <h3>Découverte d'Outils</h3>
+                    <ul>
+                        <li><a href="https://theresanaiforthat.com/" target="_blank" rel="noopener noreferrer" title="There's An AI For That (TAAFT)">There's An AI For That</a><span class="tool-description">Très large base de données d'outils IA pour toutes les tâches.</span></li>
+                        <li><a href="https://futurepedia.io/" target="_blank" rel="noopener noreferrer" title="Futurepedia - The Largest AI Tools Directory | Updated Daily">Futurepedia</a><span class="tool-description">Autre annuaire important d'outils IA, mis à jour quotidiennement.</span></li>
+                         <li><a href="https://www.producthunt.com/topics/artificial-intelligence" target="_blank" rel="noopener noreferrer" title="Artificial Intelligence - Product Hunt">Product Hunt (Topic AI)</a><span class="tool-description">Découvrez les nouveaux lancements d'outils et produits IA.</span> </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div> <!-- /categories-wrapper -->
+
+        <footer>
+            <p>© 2025 Annuaire IA.</p>
+            
+        </footer>
+    </div> <!-- /container -->
+</body>
+</html>
